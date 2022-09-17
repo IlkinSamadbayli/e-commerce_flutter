@@ -1,3 +1,4 @@
+import 'package:e_commerce_flutter/styles/colors.dart';
 import 'package:flutter/material.dart';
 
 class ConstInput extends StatefulWidget {
@@ -48,29 +49,29 @@ class _ConstInputState extends State<ConstInput> {
           hintText: widget.hintText,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(
-              color: Colors.blue,
+            borderSide: BorderSide(
+              color: AppColor.focusColor,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(
-              color: Colors.blue,
+            borderSide: BorderSide(
+              color: AppColor.focusColor,
             ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(
-              color: Colors.green,
+            borderSide: BorderSide(
+              color: AppColor.mainColor,
             ),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(
-              color: Colors.red,
+            borderSide: BorderSide(
+              color: AppColor.errorColor,
             ),
           ),
-          focusColor: Colors.blue,
+          focusColor: AppColor.focusColor,
         ),
       ),
     );
@@ -92,14 +93,14 @@ Widget elevatedbutton({
       ),
       onPressed: onTap,
       elevation: 80,
-      fillColor: clicked ? Colors.green : Colors.black12,
+      fillColor: clicked ? AppColor.mainColor : AppColor.textColor,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             text,
             style: TextStyle(
-              color: clicked ? Colors.white : Colors.green,
+              color: clicked ? AppColor.versionColorWhite : AppColor.mainColor,
             ),
           ),
           const SizedBox(
@@ -107,7 +108,7 @@ Widget elevatedbutton({
           ),
           Icon(
             suffixButtonIcon,
-            color: clicked ? Colors.white : Colors.green,
+            color: clicked ? AppColor.versionColorWhite : AppColor.mainColor,
           ),
         ],
       ),
