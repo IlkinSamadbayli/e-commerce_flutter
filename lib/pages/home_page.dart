@@ -1,3 +1,4 @@
+import 'package:e_commerce_flutter/styles/colors.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -31,16 +32,16 @@ class HomePage extends StatelessWidget {
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
               ),
-              focusColor: Colors.blue,
+              focusColor: AppColor.focusColor
             ),
           ),
           FloatingActionButton(
-            focusColor: Colors.green,
+            focusColor: AppColor.mainColor,
             onPressed: () {},
-            child: Row(
+            child: Column(
               children: [
                 Text(text, style: TextStyle(
-                  color: isFocused? Colors.white : Colors.green 
+                  color: isFocused? AppColor.versionColorWhite : AppColor.mainColor
                 ),),
                 const SizedBox(
                   width: 4,
