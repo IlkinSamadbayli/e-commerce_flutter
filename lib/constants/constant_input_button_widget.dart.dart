@@ -1,4 +1,3 @@
-import 'package:e_commerce_flutter/styles/colors.dart';
 import 'package:flutter/material.dart';
 
 class ConstInput extends StatefulWidget {
@@ -49,29 +48,29 @@ class _ConstInputState extends State<ConstInput> {
           hintText: widget.hintText,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide(
-              color: AppColor.focusColor,
+            borderSide: const BorderSide(
+              color: Colors.blue,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide(
-              color: AppColor.focusColor,
+            borderSide: const BorderSide(
+              color: Colors.blue,
             ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide(
-              color: AppColor.mainColor,
+            borderSide: const BorderSide(
+              color: Colors.green,
             ),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide(
-              color: AppColor.errorColor,
+            borderSide: const BorderSide(
+              color: Colors.red,
             ),
           ),
-          focusColor: AppColor.focusColor,
+          focusColor: Colors.blue,
         ),
       ),
     );
@@ -80,7 +79,8 @@ class _ConstInputState extends State<ConstInput> {
 
 Widget elevatedbutton({
   required String text,
-  IconData? suffixButtonIcon,
+  IconData? sufixButtonIcon,
+  IconData? preffixButtonIcon,
   required bool clicked,
   VoidCallback? onTap,
 }) {
@@ -93,22 +93,24 @@ Widget elevatedbutton({
       ),
       onPressed: onTap,
       elevation: 80,
-      fillColor: clicked ? AppColor.mainColor : AppColor.textColor,
+      fillColor: clicked ? Colors.green : Colors.black12,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Icon(
+            preffixButtonIcon,
+            color: clicked ? Colors.white : Colors.green,
+          ),
           Text(
             text,
+            textAlign: TextAlign.center,
             style: TextStyle(
-              color: clicked ? AppColor.versionColorWhite : AppColor.mainColor,
+              color: clicked ? Colors.white : Colors.green,
             ),
           ),
-          const SizedBox(
-            width: 16,
-          ),
           Icon(
-            suffixButtonIcon,
-            color: clicked ? AppColor.versionColorWhite : AppColor.mainColor,
+            sufixButtonIcon,
+            color: clicked ? Colors.white : Colors.green,
           ),
         ],
       ),
